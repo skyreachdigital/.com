@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyReach Digital | Premium Growth Partners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0a18;
+            --secondary: #1c1c3a;
+            --accent: #c9a063;
+            --accent-light: #d4b686;
+            --light: #f5f5f7;
+            --text: #333333;
+            --text-light: #888888;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 160, 99, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(10, 10, 24, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            left: 0;
+            bottom: 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 24, 0.8), rgba(10, 10, 24, 0.8)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, transparent 10%, rgba(10, 10, 24, 0.9) 70%);
+            animation: pulse 15s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.5s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Floating AI Elements */
+        .floating-ai {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .ai-1 {
+            top: 20%;
+            left: 10%;
+            background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .ai-2 {
+            top: 60%;
+            right: 10%;
+            background-image: url('https://images.unsplash.com/photo-1677442135330-959b64c1e486?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
+            animation: float 10s ease-in-out infinite 2s;
+        }
+
+        .ai-3 {
+            bottom: 20%;
+            left: 15%;
+            background-image: url('https://images.unsplash.com/photo-1677442135330-a73b48e0136f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
+            animation: float 12s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Pillars Section */
+        .pillars {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+            background: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .pillar:hover:before {
+            transform: scaleX(1);
+        }
+
+        .pillar.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pillar:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .pillar:hover .pillar-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .pillar h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Results Section */
+        .results {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 160, 99, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .results h2 {
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .results h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .result-item {
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .result-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transform: scale(0.9);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .result-item:hover:before {
+            transform: scale(1);
+        }
+
+        .result-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .result-item:hover .result-number {
+            transform: scale(1.1);
+        }
+
+        .result-text {
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: var(--transition);
+        }
+
+        .about-content.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(201, 160, 99, 0.2), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .about-image:hover:before {
+            opacity: 1;
+        }
+
+        .about-image.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f9f9f9;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: var(--transition);
+        }
+
+        .service:hover:before {
+            transform: scaleY(1);
+        }
+
+        .service.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service:hover .service-icon {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .portfolio-item.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 24, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 20px;
+            text-align: center;
+            transform: translateY(20px);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #f9f9f9;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .testimonial.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--accent-light);
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            opacity: 0.2;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .blog-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-content h3 {
+            color: var(--accent);
+        }
+
+        .blog-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Blog Expanded Content */
+        .blog-expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f9f9f9;
+        }
+
+        .blog-expanded-content-inner {
+            padding: 25px;
+        }
+
+        .blog-card.expanded .blog-expanded-content {
+            max-height: 1000px;
+        }
+
+        .blog-card.expanded .read-more-btn i {
+            transform: rotate(180deg);
+        }
+
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .content-highlights {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-highlights ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .content-highlights li {
+            margin-bottom: 10px;
+        }
+
+        .read-more-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .read-more-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f9f9f9;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: var(--transition);
+        }
+
+        .contact-form.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(201, 160, 99, 0.2);
+        }
+
+        .contact-info {
+            padding: 20px;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: var(--transition);
+        }
+
+        .contact-info.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-methods {
+            margin-top: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover .contact-icon {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-light);
+            transform: translateY(-5px);
+        }
+
+        /* Page loader */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-loader .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* AI Animation Section */
+        .ai-animation {
+            padding: 80px 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-animation h2 {
+            color: white;
+            position: relative;
+        }
+
+        .ai-animation h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .ai-animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+
+        .ai-brain {
+            width: 200px;
+            height: 200px;
+            background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80') center/contain no-repeat;
+            animation: pulse-glow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ai-orb {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: orbit 8s linear infinite;
+            opacity: 0.7;
+        }
+
+        .ai-orb:nth-child(2) {
+            animation-delay: -2s;
+            background: var(--accent-light);
+        }
+
+        .ai-orb:nth-child(3) {
+            animation-delay: -4s;
+            background: #6c63ff;
+        }
+
+        .ai-orb:nth-child(4) {
+            animation-delay: -6s;
+            background: #ff6584;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.05);
+                filter: brightness(1.2);
+            }
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(120px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(120px) rotate(-360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 150px 0 100px;
+            }
+
+            .floating-ai {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: var(--transition);
+            }
+            
+            nav ul.show {
+                display: flex;
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .pillar,
+            .service,
+            .testimonial,
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .result-number {
+                font-size: 2.5rem;
+            }
+
+            .ai-brain {
+                width: 150px;
+                height: 150px;
+            }
+
+            .ai-orb {
+                width: 20px;
+                height: 20px;
+            }
+
+            @keyframes orbit {
+                0% {
+                    transform: rotate(0deg) translateX(90px) rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg) translateX(90px) rotate(-360deg);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">SkyReach Digital</div>
+            <nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+    
+        <div class="container hero-content">
+            <h1>We Help Startups Look Premium, Pitch Confidently, & Scale With Strategy.</h1>
+            <p>Brand identity, investor decks, and digital campaigns that drive real growth.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Book Free Strategy Call</a>
+                <a href="#portfolio" class="btn btn-outline">View Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section class="pillars">
+        <div class="container">
+            <h2>Our Core Services</h2>
+            <div class="pillars-container">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Build → Branding & Websites</h3>
+                    <p>Creating distinctive brand identities and high-converting websites that establish market presence.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <h3>Pitch → Investor/Sales Decks</h3>
+                    <p>Crafting compelling presentations that secure funding and drive sales conversations.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Scale → Social Media & Ads</h3>
+                    <p>Developing strategic content and targeted campaigns that accelerate business growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h2>Proven Results</h2>
+            <div class="results-container">
+                <div class="result-item">
+                    <div class="result-number">130+</div>
+                    <div class="result-text">Projects Completed</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">98%</div>
+                    <div class="result-text">Client Satisfaction</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">40+</div>
+                    <div class="result-text">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Animation Section -->
+    <section class="ai-animation">
+        <div class="container">
+            <h2>AI-Powered Creative Solutions</h2>
+            <p>Harnessing cutting-edge AI technology to deliver innovative design and marketing solutions</p>
+            <div class="ai-animation-container">
+                <div class="ai-brain"></div>
+                <div class="ai-orb"></div>
+                <div class="ai-orb"></div>
+                <div class="ai-orb"></div>
+                <div class="ai-orb"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Not Just Designers — Your Growth Partners.</h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <p>Our founder brings a unique combination of development expertise and design sensibility, evolved into strategic growth thinking. With over a decade of experience in the startup ecosystem, we understand what it takes to stand out in competitive markets.</p>
+                    <p>We guide presentations, meetings, and projects with confidence, ensuring your startup communicates value effectively to investors and customers alike.</p>
+                    <p>Our mission is helping startups become investor-ready and customer-attractive through premium design and strategic positioning.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SkyReach Digital team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="services-intro">We don't just make posts. We build brands, pitch decks, and growth campaigns.</p>
+            <div class="services-container">
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Branding & Websites</h3>
+                    <p>Comprehensive brand development including logo design, visual identity systems, and responsive website development that converts visitors into customers.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <h3>Investor/Sales Decks</h3>
+                    <p>Data-driven pitch decks that tell compelling stories, sales materials that communicate value propositions clearly, and investor packages that build confidence.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Social Media & Ads</h3>
+                    <p>Strategic content creation and targeted advertising campaigns designed to increase brand awareness, engagement, and conversion rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="TechStart Brand Transformation" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>TechStart Brand Transformation</h3>
+                        <p>Complete visual identity overhaul with focused messaging and premium presentation materials.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="FinTech Platform Investor Deck" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>FinTech Platform Investor Deck</h3>
+                        <p>Visual storytelling approach that simplified complex concepts into compelling narratives.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="HealthTech Social Campaign" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>HealthTech Social Campaign</h3>
+                        <p>Strategic content creation that increased engagement by 200% and leads by 150%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"SkyReach transformed our pitch deck and branding. We went from struggling to get meetings to having investors pursue us."</p>
+                    <p class="testimonial-author">- Ritik Agarwal, Founder of TechStart</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The strategic approach to our social media campaigns resulted in a 3x increase in qualified leads within two months."</p>
+                    <p class="testimonial-author">- Dipali Bangal, K Events</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Their attention to detail and understanding of investor psychology helped us secure funding in record time."</p>
+                    <p class="testimonial-author">- Ramesh Shaha, Muscle Fitness Gym</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>Insights & Strategies</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Why Canva Can't Replace Strategy" class="blog-image">
+                    <div class="blog-content">
+                        <h3>Why Canva Can't Replace Strategy for Startups</h3>
+                        <p>Exploring the limitations of DIY design tools when building a distinctive brand identity that stands out to investors.</p>
+                        <button class="btn btn-outline read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="blog-expanded-content">
+                        <div class="blog-expanded-content-inner">
+                            <div class="content-section">
+                                <h4>The Limitations of Template-Based Design</h4>
+                                <p>While Canva offers convenience and accessibility, it falls short when creating truly unique brand identities. Template-based designs often result in generic-looking materials that fail to communicate a startup's unique value proposition.</p>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4>Strategic Brand Development</h4>
+                                <p>Professional branding goes beyond aesthetics—it involves strategic thinking about target audience, market positioning, and long-term growth. Canva templates lack this strategic foundation, which is crucial for startups seeking investment.</p>
+                            </div>
+                            
+                            <div class="content-highlights">
+                                <h4>Key Considerations:</h4>
+                                <ul>
+                                    <li>Custom design communicates professionalism and attention to detail</li>
+                                    <li>Strategic branding aligns visual identity with business objectives</li>
+                                    <li>Investors recognize and value professionally developed brand systems</li>
+                                    <li>Scalable design systems support growth and evolution</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="3 Decks Every Founder Needs" class="blog-image">
+                    <div class="blog-content">
+                        <h3>3 Decks Every Founder Needs Before Raising Funds</h3>
+                        <p>The essential presentation frameworks required to effectively communicate your vision to different investor audiences.</p>
+                        <button class="btn btn-outline read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="blog-expanded-content">
+                        <div class="blog-expanded-content-inner">
+                            <div class="content-section">
+                                <h4>1. The Pitch Deck</h4>
+                                <p>This is your primary fundraising tool, typically 10-15 slides that cover problem, solution, market size, business model, team, traction, and ask. It should be visually compelling and tell a cohesive story about your startup's potential.</p>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4>2. The Detailed Deck</h4>
+                                <p>A more comprehensive version (20-30 slides) for investors who want deeper due diligence. This includes detailed financial projections, competitive analysis, go-to-market strategy, and product roadmap.</p>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4>3. The Follow-up Deck</h4>
+                                <p>Used after initial meetings to address specific questions or concerns raised by investors. This tailored approach shows responsiveness and commitment to addressing investor needs.</p>
+                            </div>
+                            
+                            <div class="content-highlights">
+                                <h4>Deck Best Practices:</h4>
+                                <ul>
+                                    <li>Keep designs clean and professional with consistent branding</li>
+                                    <li>Use data visualization to make complex information digestible</li>
+                                    <li>Tailor content to specific investor interests and focus areas</li>
+                                    <li>Include social proof through testimonials or client logos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Reels + Ads Strategy" class="blog-image">
+                    <div class="blog-content">
+                        <h3>Reels + Ads: Shortcut to Local Business Growth</h3>
+                        <p>How combining engaging short-form video with targeted advertising can accelerate customer acquisition.</p>
+                        <button class="btn btn-outline read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="blog-expanded-content">
+                        <div class="blog-expanded-content-inner">
+                            <div class="content-section">
+                                <h4>The Power of Short-Form Video</h4>
+                                <p>Platforms like Instagram have revolutionized how businesses connect with local audiences. Reels and short videos offer authentic engagement that traditional advertising often lacks.</p>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4>Strategic Ad Targeting</h4>
+                                <p>By combining engaging organic content with precisely targeted ads, local businesses can dramatically increase their visibility to relevant audiences within specific geographic areas.</p>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4>Content That Converts</h4>
+                                <p>Effective Reels content for local businesses includes behind-the-scenes glimpses, customer testimonials, quick tutorials, and local community engagement. This authentic content performs better when boosted with targeted advertising.</p>
+                            </div>
+                            
+                            <div class="content-highlights">
+                                <h4>Implementation Strategy:</h4>
+                                <ul>
+                                    <li>Create authentic, value-driven content specific to your local audience</li>
+                                    <li>Use geographic targeting to reach potential customers in your service area</li>
+                                    <li>Retarget engaged users with special offers or calls to action</li>
+                                    <li>Track and optimize based on engagement metrics and conversion data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Ready to elevate your startup's presence? Book your free strategy call today.</p>
+          
+                       
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <a href="https://wa.me/7796170216">Message us on WhatsApp</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:hello@skyreachdigital7@gmail.com">Email us at hello@skyreachdigital7@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">SkyReach Digital</div>
+                    <p>Helping startups become investor-ready and customer-attractive through premium design and strategic positioning.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Branding & Websites</a></li>
+                        <li><a href="#">Investor Decks</a></li>
+                        <li><a href="#">Sales Collateral</a></li>
+                        <li><a href="#">Social Media Content</a></li>
+                        <li><a href="#">Advertising Campaigns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SkyReach Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Page loader
+        window.addEventListener('load', function() {
+            const pageLoader = document.querySelector('.page-loader');
+            pageLoader.style.opacity = '0';
+            setTimeout(() => {
+                pageLoader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.pillar, .result-item, .about-content, .about-image, .service, .portfolio-item, .testimonial, .blog-card, .contact-form, .contact-info');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+
+        // Blog read more functionality
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const blogCard = this.closest('.blog-card');
+                blogCard.classList.toggle('expanded');
+                
+                // Scroll to the expanded content if opening
+                if (blogCard.classList.contains('expanded')) {
+                    blogCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial call to check elements in view on page load
+        animateOnScroll();
+    </script>
+</body>
+</html>
